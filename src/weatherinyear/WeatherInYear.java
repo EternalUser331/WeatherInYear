@@ -5,6 +5,8 @@
  */
 package weatherinyear;
 
+import java.util.Random;
+
 /**
  *
  * @author user
@@ -15,22 +17,38 @@ public class WeatherInYear {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[][] nums2 = new int[11][];
-        nums2[0] = new int[31];
-        nums2[1] = new int[29];
-        nums2[2] = new int[31];
-        nums2[3] = new int[30];
-        nums2[4] = new int[31];
-        nums2[5] = new int[30];
-        nums2[6] = new int[31];
-        nums2[7] = new int[31];
-        nums2[8] = new int[30];
-        nums2[9] = new int[31];
-        nums2[10] = new int[30];
-        nums2[11] = new int[31];
-        System.out.println("погода: ",nums2[4]);
+        Random random = new Random();
+        int n = 0, min = -50, max = 50; 
+        int[][] tInYear = new int[12][];
+        for(int i = 0; i < 12; i++) {
+            switch (i) {
+                case 0: min=-25; max=-5; n = 31; break;
+                case 1: min=-25; max=5; n = 28; break;
+                case 2: min=-15; max=10; n = 31; break;
+                case 3: min=-5; max=10; n = 30; break;
+                case 4: min=0; max=20; n = 31; break;
+                case 5: min=10; max=25; n = 30; break;
+                case 6: min=15; max=30; n = 31; break;
+                case 7: min=10; max=25; n = 31; break;
+                case 8: min=5; max=15; n = 30; break;
+                case 9: min=0; max=10; n = 31; break;
+                case 10: min=-5; max=5; n = 30; break;
+                case 11: min=-15; max=0; n = 31; break;
+            }
+            tInYear[i] = new int[n];
+            for(int j = 0;j < tInYear[i].length; j++){
+                tInYear[i][j] = random.nextInt(max-min+1)+min;
+                System.out.printf("%4d",tInYear[i][j]);     
+            }
+            System.out.println();
+          
+    }
+
         
-    }    
+      
+        
+        
+       
 
         
         
