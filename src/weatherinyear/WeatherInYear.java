@@ -6,6 +6,7 @@
 package weatherinyear;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -43,19 +44,13 @@ public class WeatherInYear {
             System.out.println();
           
     }
-
-        
-      
-        
-        
-       
-
-        
-        
-        
-        
-                
-
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Введите месяц: ");
+    int month = scanner.nextInt();
+    System.out.print("Введите день: ");
+    int day = scanner.nextInt();
+    System.out.println("В этот день была температура: "+tInYear[month-1][day-1]);    
+            
     }
     
 }
